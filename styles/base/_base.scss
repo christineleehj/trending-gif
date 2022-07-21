@@ -1,0 +1,30 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Baloo 2', sans-serif;
+    background-size: 60px 60px;
+    background-image: linear-gradient(to right, #efefef 1px, transparent 1px), linear-gradient(to bottom, #efefef 1px, transparent 1px);
+    margin: 0;
+
+    &::before {
+        content: '';
+        width: 50%;
+        height: 400px;
+        background: $color-primary;
+        position: fixed;
+        top: 0;
+        left: 0;
+        clip-path: polygon(0 0, 0 50%, 100% 0);
+        z-index: -1;
+
+        @media (max-width: 500px) {
+            background: none;
+        }
+    }
+
+    ::selection {
+        background-color: $color-primary;
+    }
+}
